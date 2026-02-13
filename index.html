@@ -299,29 +299,59 @@
         }
 
         /* Decorative heart accent */
-        .heart-accent {
-            width: 40px;
+        .heart {
             height: 40px;
-            margin: 2rem auto;
-            position: relative;
-        }
-
-        .heart-accent::before,
-        .heart-accent::after {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 32px;
+            width: 40px;
             background: var(--main);
-            border-radius: 20px 20px 0 0;
+            margin: 2rem auto;
             transform: rotate(-45deg);
-            transform-origin: 0 100%;
+            position: relative;
+            /* Apply the animation */
+            animation: heartbeat 1s infinite;
         }
 
-        .heart-accent::after {
+        /* Create the top-left circle of the heart */
+        .heart::before,
+        .heart::after {
+            content: "";
+            background: var(--main);
+            border-radius: 50%;
+            height: 40px;
+            width: 40px;
+            position: absolute;
+        }
+
+        .heart::before {
+            top: -20px;
+            left: 0;
+        }
+
+        /* Create the top-right circle of the heart */
+        .heart::after {
             left: 20px;
-            transform: rotate(45deg);
-            transform-origin: 100% 100%;
+            top: 0;
+        }
+
+        /* Define the pulsing animation */
+        @keyframes heartbeat {
+            0% {
+                transform: scale(1) rotate(-45deg);
+            }
+
+            25% {
+                transform: scale(1.25) rotate(-45deg);
+                /* Scale up for the "beat" */
+            }
+
+            50% {
+                transform: scale(1.5) rotate(-45deg);
+                /* Scale up further */
+            }
+
+            100% {
+                transform: scale(1) rotate(-45deg);
+                /* Return to normal size */
+            }
         }
 
         /* ===== SECTION 3: MEMORIES GALLERY (Swaying Gallery from Inspiration) ===== */
@@ -1455,7 +1485,8 @@
                 greatest adventure in this journey of life.
             </p>
 
-            <div class="heart-accent"></div>
+            <div class="heart"></div>
+
 
             <p class="message-text">
                 Thank you for being you—for your laughter that brightens my world, for your
