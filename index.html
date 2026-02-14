@@ -460,6 +460,9 @@
             box-shadow: 0 7px 8px rgba(0, 0, 0, 0.4);
             width: 100%;
             height: auto;
+            /* Change back to auto so it fits content */
+            min-height: 380px;
+            /* Add this to maintain consistent size */
             text-align: center;
             background-color: ghostwhite;
             background-image: linear-gradient(135deg,
@@ -504,19 +507,16 @@
             z-index: 2;
         }
 
-        figure .gallery-placeholder {
-            aspect-ratio: 1 / 1;
+        figure img {
             width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 2rem;
+            height: 320px;
+            /* Slightly reduce to leave room for caption */
+            object-fit: cover;
+            object-position: center;
             border-radius: 5px;
-            margin-bottom: 10px;
-            background: linear-gradient(135deg,
-                    rgba(253, 195, 161, 0.4) 0%,
-                    rgba(251, 155, 143, 0.3) 100%);
+            margin-bottom: 0.5rem;
+            /* Add space between image and caption */
+            display: block;
             z-index: 1;
         }
 
@@ -539,8 +539,12 @@
             overflow: hidden;
             white-space: nowrap;
             text-overflow: ellipsis;
-            z-index: 1;
+            z-index: 2;
+            /* Make sure it's on top */
             color: var(--main);
+            display: block;
+            padding: 0.25rem 0;
+            text-align: center;
         }
 
         @keyframes swing {
@@ -1507,76 +1511,42 @@
 
         <div id="gallery">
             <figure>
-                <div class="gallery-placeholder">
-                    <div class="gallery-icon">
-                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-                        </svg>
-                    </div>
-                </div>
-                <figcaption>Our First Date</figcaption>
+                <img src="images/WhatsApp Image 2026-02-13 at 7.11.22 PM.jpeg" alt="Myusiki Valentines Movie Night">
+                <figcaption>Myusiki Valentines Movie Night</figcaption>
+            </figure>
+            <figure>
+                <img src="images/WhatsApp Image 2026-02-13 at 7.10.39 PM.jpeg" alt="Start of the long distance">
+                <figcaption>Start of the long distance &#128546;</figcaption>
             </figure>
 
             <figure>
-                <div class="gallery-placeholder">
-                    <div class="gallery-icon">
-                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-                        </svg>
-                    </div>
-                </div>
-                <figcaption>Adventure Together</figcaption>
+                <img src="images/WhatsApp Image 2026-02-13 at 7.10.41 PM.jpeg" alt="Graduation">
+                <figcaption>Graduation</figcaption>
             </figure>
 
             <figure>
-                <div class="gallery-placeholder">
-                    <div class="gallery-icon">
-                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-                        </svg>
-                    </div>
-                </div>
-                <figcaption>Laughing Together</figcaption>
+                <img src="images/WhatsApp Image 2026-02-13 at 7.11.03 PM.jpeg" alt="First Visit to Rongai">
+                <figcaption>First Visit to Rongai</figcaption>
             </figure>
 
             <figure>
-                <div class="gallery-placeholder">
-                    <div class="gallery-icon">
-                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-                        </svg>
-                    </div>
-                </div>
-                <figcaption>Sunset Views</figcaption>
+                <img src="images/WhatsApp Image 2026-02-13 at 7.11.08 PM.jpeg" alt="Second Visit to Rongai">
+                <figcaption>Second Visit to Rongai(Kijana alimalizwa)</figcaption>
             </figure>
 
             <figure>
-                <div class="gallery-placeholder">
-                    <div class="gallery-icon">
-                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-                        </svg>
-                    </div>
-                </div>
+                <img src="images/WhatsApp Image 2026-02-13 at 7.11.26 PM.jpeg" alt="Happy Times">
+                <figcaption>Pure Joy &#128514;</figcaption>
+            </figure>
+            <figure>
+                <img src="images/WhatsApp Image 2026-02-13 at 7.11.57 PM.jpeg" alt="Departure for Malindi">
+                <figcaption>Departure for Malindi</figcaption>
+            </figure>
+            <figure>
+                <img src="images/WhatsApp Image 2026-02-13 at 7.12.16 PM.jpeg" alt="First Date">
                 <figcaption>Cozy Moments</figcaption>
             </figure>
 
-            <figure>
-                <div class="gallery-placeholder">
-                    <div class="gallery-icon">
-                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-                        </svg>
-                    </div>
-                </div>
-                <figcaption>Forever Us</figcaption>
-            </figure>
         </div>
     </section>
 
